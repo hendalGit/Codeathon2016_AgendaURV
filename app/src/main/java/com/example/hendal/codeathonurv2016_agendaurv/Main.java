@@ -82,7 +82,8 @@ public class Main extends AppCompatActivity
         if (id == R.id.nav_horari) {
             // Handle the camera action
         } else if (id == R.id.nav_calendari) {
-
+            Intent i = new Intent(Main.this, Calendari.class);
+            startActivity(i);
         } else if (id == R.id.nav_professors) {
             Intent i = new Intent(Main.this, Professors.class);
             startActivity(i);
