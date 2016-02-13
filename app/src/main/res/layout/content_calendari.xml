@@ -29,8 +29,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/calendari_text_event"
-        android:id="@+id/Calendario_text_evento"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Eventos"
+        android:id="@+id/textView3"
         android:layout_below="@+id/calendarView"
-        android:layout_alignEnd="@+id/chronometer" />
+        android:layout_alignStart="@+id/calendarView"
+        android:layout_toStartOf="@+id/chronometer" />
+
 </RelativeLayout>
