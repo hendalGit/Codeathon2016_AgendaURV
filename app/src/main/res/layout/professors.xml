@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorPrimaryDark">
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="Profesors"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:elegantTextHeight="false"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginBottom="5dp" />
+
+    </LinearLayout>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/listaprofesoresView"
+        android:clickable="true"
+        android:choiceMode="singleChoice"
+        android:textAlignment="center"
+        android:visibility="visible"
+        android:textFilterEnabled="false"
+        android:contextClickable="false" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_gravity="right" />
+
+</LinearLayout>
