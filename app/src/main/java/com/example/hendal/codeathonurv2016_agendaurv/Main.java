@@ -92,7 +92,6 @@ public class Main extends AppCompatActivity
             startActivity(i);
         } else if (true || id == R.id.nav_professors) {
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.add(R.id.fragment, new pollas());
             ft.addToBackStack("tag_back");
             System.out.println("jijiji");
             ft.commit();
