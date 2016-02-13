@@ -85,22 +85,35 @@ public class Main extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_horari) {
-            // Handle the camera action
-        } else if (id == R.id.nav_calendari) {
-
-            Intent i = new Intent(Main.this, Calendari.class);
-            startActivity(i);
-        } else if (true || id == R.id.nav_professors) {
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.add(R.id.fragment, new pollas());
+            ft.replace(R.id.fragment, new Horari());
             ft.addToBackStack("tag_back");
             System.out.println("jijiji");
             ft.commit();
+        } else if (id == R.id.nav_calendari) {
+
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.fragment, new Calendari());
+            ft.addToBackStack("tag_back");
+            System.out.println("jijiji");
+            ft.commit();
+
+        } else if (id == R.id.nav_professors) {
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.fragment, new Professors());
+            ft.addToBackStack("tag_back");
+            System.out.println("jijiji");
+            ft.commit();
+
         } else if (id == R.id.nav_qualificacions) {
 
         } else if (id == R.id.nav_sales) {
-            Intent i = new Intent(Main.this, Crai.class);
-            startActivity(i);
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.fragment, new Crai());
+            ft.addToBackStack("tag_back");
+            System.out.println("jijiji");
+            ft.commit();
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

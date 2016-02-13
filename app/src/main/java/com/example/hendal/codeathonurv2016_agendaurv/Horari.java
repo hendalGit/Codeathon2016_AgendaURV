@@ -1,39 +1,29 @@
 package com.example.hendal.codeathonurv2016_agendaurv;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.support.v4.app.Fragment;
 
-public class Professors extends Fragment {
+/**
+ * Created by Chus on 13/02/2016.
+ */
+public class Horari extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
 
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View inflate = inflater.inflate(R.layout.professors, container, false);
-        final String[] llistaprofessors = new String[]{
-                "Jordi Duch","Pedro Garcia", "Xavier Mallafré", "Álex Arenas", "Santiago Romaní"
-        };
+        View inflate = inflater.inflate(R.layout.horari, container, false);
 
-        int[] imagenes = {
-                R.drawable.icono0,
-                R.drawable.icono1,
-                R.drawable.icono0,
-                R.drawable.icono1,
-                R.drawable.icono1
-        };
 
-        ListViewAdapter adapter = new ListViewAdapter(getContext(), llistaprofessors, imagenes);
+        /*ListViewAdapter adapter = new ListViewAdapter(getContext(), llistaprofessors, imagenes);
         ListView listprofesview = (ListView) inflate.findViewById(R.id.llistaprofessorsView);
         listprofesview.setAdapter(adapter);
         listprofesview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -44,7 +34,7 @@ public class Professors extends Fragment {
                 //startActivity(i);
 
             }
-        });
+        });*/
 
 
 
