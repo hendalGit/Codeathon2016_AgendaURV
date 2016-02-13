@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorPrimaryDark">
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="CRAI"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:elegantTextHeight="false"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginBottom="5dp" /></LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:layout_width="256dp"
+            android:layout_height="wrap_content"
+            android:text="Campus Sescelades"
+            android:id="@+id/Sescelades"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="100dp" />
+
+        <Button
+            android:layout_width="256dp"
+            android:layout_height="wrap_content"
+            android:text="Campus Catalunya"
+            android:id="@+id/CampusCat"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp" />
+
+        <Button
+            android:layout_width="256dp"
+            android:layout_height="wrap_content"
+            android:text="Campus Terres de l'Ebre"
+            android:id="@+id/TerresEbre"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp" />
+
+        <Button
+            android:layout_width="256dp"
+            android:layout_height="wrap_content"
+            android:text="Campus Medicina i Ciències de la Salut"
+            android:id="@+id/Medicina"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp" />
+    </LinearLayout>
+</LinearLayout>

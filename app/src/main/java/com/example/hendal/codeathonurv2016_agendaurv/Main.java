@@ -1,5 +1,6 @@
 package com.example.hendal.codeathonurv2016_agendaurv;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -61,12 +62,10 @@ public class Main extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
+
         if (id == R.id.action_settings) {
             return true;
         }
@@ -85,11 +84,14 @@ public class Main extends AppCompatActivity
         } else if (id == R.id.nav_calendari) {
 
         } else if (id == R.id.nav_professors) {
+            Intent i = new Intent(Main.this, Professors.class);
+            startActivity(i);
 
         } else if (id == R.id.nav_qualificacions) {
 
         } else if (id == R.id.nav_sales) {
-
+            Intent i = new Intent(Main.this, Crai.class);
+            startActivity(i);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
