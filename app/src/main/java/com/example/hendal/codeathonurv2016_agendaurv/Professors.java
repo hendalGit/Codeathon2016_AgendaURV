@@ -17,7 +17,16 @@ public class Professors extends Activity {
         final String[] llistaprofessors = new String[]{
                 "Jordi Duch","Pedro Garcia", "Xavier Mallafré", "Álex Arenas", "Santiago Romaní"
         };
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.select_dialog_item, llistaprofessors);
+
+        int[] imagenes = {
+                R.drawable.icono0,
+                R.drawable.icono1,
+                R.drawable.icono0,
+                R.drawable.icono1,
+                R.drawable.icono1
+        };
+
+        ListViewAdapter adapter = new ListViewAdapter(this, llistaprofessors, imagenes);
         ListView listprofesview = (ListView) findViewById(R.id.llistaprofessorsView);
         listprofesview.setAdapter(adapter);
         listprofesview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
