@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentTransaction;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 
 public class Main extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -24,7 +27,7 @@ public class Main extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -32,6 +35,8 @@ public class Main extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
+
+        */
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -82,12 +87,15 @@ public class Main extends AppCompatActivity
         if (id == R.id.nav_horari) {
             // Handle the camera action
         } else if (id == R.id.nav_calendari) {
+
             Intent i = new Intent(Main.this, Calendari.class);
             startActivity(i);
-        } else if (id == R.id.nav_professors) {
-            Intent i = new Intent(Main.this, Professors.class);
-            startActivity(i);
-
+        } else if (true || id == R.id.nav_professors) {
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.add(R.id.fragment, new pollas());
+            ft.addToBackStack("tag_back");
+            System.out.println("jijiji");
+            ft.commit();
         } else if (id == R.id.nav_qualificacions) {
 
         } else if (id == R.id.nav_sales) {
