@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-public class Calendari extends AppCompatActivity {
+public class Calendari extends Main {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

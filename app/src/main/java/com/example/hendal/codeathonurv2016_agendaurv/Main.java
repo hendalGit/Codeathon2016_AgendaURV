@@ -80,13 +80,13 @@ public class Main extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_horari) {
-            // Handle the camera action
-        } else if (id == R.id.nav_calendari) {
 
+        } else if (id == R.id.nav_calendari) {
+            Intent i = new Intent(Main.this, Calendari.class);
+            startActivity(i);
         } else if (id == R.id.nav_professors) {
             Intent i = new Intent(Main.this, Professors.class);
             startActivity(i);
-
         } else if (id == R.id.nav_qualificacions) {
 
         } else if (id == R.id.nav_sales) {

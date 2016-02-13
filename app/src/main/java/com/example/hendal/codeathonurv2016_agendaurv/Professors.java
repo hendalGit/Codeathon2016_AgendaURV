@@ -7,7 +7,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class Professors extends Activity {
+public class Professors extends Main {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 

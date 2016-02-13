@@ -3,7 +3,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.Button;
 
-public class Crai extends Activity {
+public class Crai extends Main {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
