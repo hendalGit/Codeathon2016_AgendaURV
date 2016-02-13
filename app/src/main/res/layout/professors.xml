@@ -11,7 +11,7 @@
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="Profesors"
+            android:text="Disponibilitat Professors"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:elegantTextHeight="false"
@@ -23,7 +23,7 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/listaprofesoresView"
+        android:id="@+id/llistaprofessorsView"
         android:clickable="true"
         android:choiceMode="singleChoice"
         android:textAlignment="center"
