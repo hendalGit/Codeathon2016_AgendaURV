@@ -28,7 +28,7 @@ public class Crai extends Fragment {
                              Bundle savedInstanceState) {
         View inflate =  inflater.inflate(R.layout.crai, container, false);
         final String[] llistacampus = new String[]{
-                "Campus Sescelades","Campus Catalunya", "Campus Terres de l'Ebre", "Campus Medicina i Ciències de la Salut"
+                "Campus Sescelades","Campus Catalunya", "Campus Terres de l'Ebre", "Campus Medicina"
         };
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.select_dialog_item, llistacampus);
         ListView listprofesview = (ListView) inflate.findViewById(R.id.llistacampusView);
