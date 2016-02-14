@@ -1,5 +1,6 @@
 package com.example.hendal.codeathonurv2016_agendaurv;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -32,6 +33,13 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        final Activity act = this;
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(act, "Característica no disponbile", Toast.LENGTH_SHORT).show();
+            }
+        });
         //registerForContextMenu(fab);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -82,20 +90,26 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         if (id == R.id.nav_horari) {
+            fab.setVisibility(View.VISIBLE);
             ft.replace(R.id.fragment, new Horari());
             toolbar.setTitle(R.string.title_activity_horari);
         } else if (id == R.id.nav_calendari) {
+            fab.setVisibility(View.VISIBLE);
             ft.replace(R.id.fragment, new Calendari());
             toolbar.setTitle(R.string.title_activity_calendari);
         } else if (id == R.id.nav_professors) {
+            fab.setVisibility(View.VISIBLE);
             ft.replace(R.id.fragment, new Professors());
             toolbar.setTitle(R.string.title_activity_professors);
         } else if (id == R.id.nav_qualificacions) {
+            fab.setVisibility(View.GONE);
             ft.replace(R.id.fragment, new Qualificacions());
             toolbar.setTitle(R.string.title_activity_qualficacions);
         } else if (id == R.id.nav_sales) {
+            fab.setVisibility(View.GONE);
             ft.replace(R.id.fragment, new Crai());
             toolbar.setTitle(R.string.title_activity_crai);
         }

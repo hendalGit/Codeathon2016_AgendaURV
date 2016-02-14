@@ -17,14 +17,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/calendarView"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true" />
-
-    <Chronometer
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/chronometer"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentEnd="true"
+        android:layoutMode="clipBounds" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -33,7 +27,6 @@
         android:text="Eventos"
         android:id="@+id/textView3"
         android:layout_below="@+id/calendarView"
-        android:layout_alignStart="@+id/calendarView"
-        android:layout_toStartOf="@+id/chronometer" />
+        android:layout_alignStart="@+id/calendarView" />
 
 </RelativeLayout>
