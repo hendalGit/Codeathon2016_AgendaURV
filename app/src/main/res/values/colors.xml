@@ -4,4 +4,10 @@
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#A83535</color>
     <color name="colorPrimaryLight">#df6e6e</color>
+    <color name="subject1">#ff7029</color>
+    <color name="subject2">#ebfc2d</color>
+    <color name="subject3">#80ff2b</color>
+    <color name="subject4">#2affe9</color>
+    <color name="subject5">#4132ff</color>
+    <color name="subject6">#a434fa</color>
 </resources>

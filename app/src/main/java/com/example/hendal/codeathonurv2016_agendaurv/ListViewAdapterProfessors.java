@@ -7,14 +7,13 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class ListViewAdapter extends BaseAdapter {
-    // Declare Variables
+public class ListViewAdapterProfessors extends BaseAdapter {
     Context context;
     String[] titulos;
     int[] imagenes;
     LayoutInflater inflater;
 
-    public ListViewAdapter(Context context, String[] titulos, int[] imagenes) {
+    public ListViewAdapterProfessors(Context context, String[] titulos, int[] imagenes) {
         this.context = context;
         this.titulos = titulos;
         this.imagenes = imagenes;

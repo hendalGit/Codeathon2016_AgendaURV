@@ -1,6 +1,5 @@
 package com.example.hendal.codeathonurv2016_agendaurv;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -8,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class Professors extends Fragment {
@@ -33,7 +31,7 @@ public class Professors extends Fragment {
 
         };
 
-        ListViewAdapter adapter = new ListViewAdapter(getContext(), llistaprofessors, imagenes);
+        ListViewAdapterProfessors adapter = new ListViewAdapterProfessors(getContext(), llistaprofessors, imagenes);
         ListView listprofesview = (ListView) inflate.findViewById(R.id.llistaprofessorsView);
         listprofesview.setAdapter(adapter);
         listprofesview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
