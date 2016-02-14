@@ -16,8 +16,8 @@
 
         <ImageView
             android:id="@+id/list_row_image"
-            android:layout_width="30dip"
-            android:layout_height="30dip"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:src="@drawable/icono0"/>
 
     </LinearLayout>
@@ -30,7 +30,7 @@
         android:text="title"
         android:textColor="#040404"
         android:typeface="sans"
-        android:textSize="18dp"
+        android:textSize="25dp"
         android:layout_centerVertical="true"
         android:layout_toRightOf="@+id/thumbnail" />
 
