@@ -32,7 +32,7 @@ public class Professor extends Fragment {
 
         String name = "Jordi Duch Gavaldá";
         String email = "jordi.duch@urv.cat";
-        String despacho = "Despatx 256";
+        String despacho = "Despatx 256 (Disponible)";
         final String[] llistahores = new String[]{
                 "9:30","10:30", "12:30"
         };

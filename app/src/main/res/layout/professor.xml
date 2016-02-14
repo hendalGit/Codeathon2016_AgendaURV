@@ -31,7 +31,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="asudhasfhaoshfohasoihfoia"
-                    android:id="@+id/nomprofe"
+                    android:id="@+id/correoprofe"
                     android:layout_marginTop="30dp" />
 
                 <TextView
@@ -39,7 +39,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="977 62 66 23"
-                    android:id="@+id/despacho"
+                    android:id="@+id/nomprofe"
                      />
 
                 <TextView
@@ -47,7 +47,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="www.sadasdasd"
-                    android:id="@+id/correoprofe"
+                    android:id="@+id/despacho"
                     android:layout_marginTop="60dp" />
 
             </FrameLayout>
