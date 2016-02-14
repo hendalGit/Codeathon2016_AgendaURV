@@ -2,52 +2,92 @@ package com.example.hendal.codeathonurv2016_agendaurv;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.ContextMenu;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class Professors extends Fragment {
+
+    ListViewAdapterProfessors adapter;
+    ArrayList<String> llistaprofessors;
+    ArrayList<Integer> imagenes;
+
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View inflate = inflater.inflate(R.layout.professors, container, false);
-        final String[] llistaprofessors = new String[]{
-                "Jordi Duch", "Álex Arenas", "Santiago Romaní"
-        };
+        llistaprofessors = new ArrayList<>();
+        llistaprofessors.add("Jordi Duch");
+        llistaprofessors.add("Álex Arenas");
+        llistaprofessors.add("Santiago Romaní");
+        llistaprofessors.add("Tomas Gonzalez");
 
-        int[] imagenes = {
-                R.drawable.jordiverd,
-                R.drawable.alexverd,
-                R.drawable.romanirojo,
+        imagenes = new ArrayList<Integer>();
+        imagenes.add(R.drawable.jordiverd);
+        imagenes.add(R.drawable.alexverd);
+        imagenes.add(R.drawable.romanirojo);
+        imagenes.add(R.drawable.tomasverd);
 
-        };
-
-        ListViewAdapterProfessors adapter = new ListViewAdapterProfessors(getContext(), llistaprofessors, imagenes);
+        adapter = new ListViewAdapterProfessors(getContext(), llistaprofessors, imagenes, this);
         ListView listprofesview = (ListView) inflate.findViewById(R.id.llistaprofessorsView);
         listprofesview.setAdapter(adapter);
+        listprofesview.setLongClickable(true);
         listprofesview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.fragment, new Professor());
-                ft.commit();
+                String name = "Jordi Duch Gavaldá";
+                Bundle parametro = new Bundle();
+                parametro.putString("nom", name);
 
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                Fragment f = new Professor();
+                f.setArguments(parametro);
+                ft.replace(R.id.fragment, f);
+                ft.commit();
             }
         });
-
-
-
+        registerForContextMenu(listprofesview);
         return inflate;
+    }
+
+    
+
+    private View selectedItem;
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        menu.setHeaderTitle("Accions");
+        menu.add(0, v.getId(), 0, "Eliminar");
+        selectedItem = v;
+        selectedItem.setTag(((AdapterView.AdapterContextMenuInfo)menuInfo).position);
+
+    }
+
+    public boolean onContextItemSelected(MenuItem item) {
+        if (item.getTitle() == "Eliminar") {
+            int pos = (int)selectedItem.getTag();
+            Toast.makeText(getActivity(), "Esborrat el professor " + llistaprofessors.get(pos), Toast.LENGTH_SHORT).show();
+            llistaprofessors.remove(pos);
+            imagenes.remove(pos);
+            adapter.notifyDataSetChanged();
+        }
+        else {
+            return false;
+        }
+        return true;
     }
 
 }

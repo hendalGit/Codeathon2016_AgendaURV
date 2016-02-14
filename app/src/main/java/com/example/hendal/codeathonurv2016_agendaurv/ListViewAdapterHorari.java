@@ -9,16 +9,18 @@ import android.widget.BaseAdapter;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 
 public class ListViewAdapterHorari extends BaseAdapter {
     Context context;
-    String[] names;
+    ArrayList<String> names;
     String[] office;
     String[] times;
     int[] colors = {R.color.subject1,R.color.subject2,R.color.subject3,R.color.subject4,R.color.subject5,R.color.subject6};
     LayoutInflater inflater;
 
-    public ListViewAdapterHorari(Context context, String[] names, String[] office, String[] times) {
+    public ListViewAdapterHorari(Context context, ArrayList<String> names, String[] office, String[] times) {
         this.context = context;
         this.names = names;
         this.office = office;
@@ -27,7 +29,7 @@ public class ListViewAdapterHorari extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return names.length;
+        return names.size();
     }
 
     @Override
@@ -56,7 +58,7 @@ public class ListViewAdapterHorari extends BaseAdapter {
 
 
         color.setBackgroundResource(colors[position]);
-        textName.setText(names[position]);
+        textName.setText(names.get(position));
         textOffice.setText(office[position]);
         textTime.setText(times[position]);
 

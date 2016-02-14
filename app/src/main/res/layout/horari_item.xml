@@ -56,10 +56,11 @@
     <TextView
         android:layout_width="5dp"
         android:layout_height="43dp"
-        android:layout_marginTop="-16dp"
-        android:layout_marginBottom="-16dp"
         android:id="@+id/horari_row_color"
         android:layout_alignBottom="@+id/horari_row_office"
-        android:layout_alignTop="@+id/horari_row_name" />
+        android:layout_alignTop="@+id/horari_row_name"
+        android:layout_marginTop="-16dp"
+        android:layout_marginBottom="-16dp"
+        />
 
 </RelativeLayout>

@@ -19,6 +19,8 @@ import android.widget.Toast;
  * Created by Chus on 14/02/2016.
  */
 public class Professor extends Fragment {
+
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -30,7 +32,7 @@ public class Professor extends Fragment {
                              Bundle savedInstanceState) {
         View inflate = inflater.inflate(R.layout.professor, container, false);
 
-        String name = "Jordi Duch Gavaldá";
+        String name = getArguments().getString("nom");
         String email = "jordi.duch@urv.cat";
         String despacho = "Despatx 256 (Disponible)";
         final String[] llistahores = new String[]{
