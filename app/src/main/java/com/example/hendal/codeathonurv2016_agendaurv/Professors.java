@@ -48,10 +48,10 @@ public class Professors extends Fragment {
 
         llistadespatxos = new ArrayList<>();
 
-        llistadespatxos.add("Despatx 256 (Disponible)");
-        llistadespatxos.add("Despatx 254 (Disponible)");
-        llistadespatxos.add("Despatx 255 (No Disponible)");
-        llistadespatxos.add("Despatx 253 (Disponible)");
+        llistadespatxos.add("Despatx 256\nDisponible");
+        llistadespatxos.add("Despatx 254\nDisponible");
+        llistadespatxos.add("Despatx 255\nNo Disponible");
+        llistadespatxos.add("Despatx 253\nDisponible");
 
 
 
@@ -73,6 +73,8 @@ public class Professors extends Fragment {
         adapter = new ListViewAdapterProfessors(getContext(), llistaprofessors, imagenes, this);
         ListView listprofesview = (ListView) inflate.findViewById(R.id.llistaprofessorsView);
         listprofesview.setAdapter(adapter);
+        container.getRootView().findViewById(R.id.fab).setVisibility(View.VISIBLE);
+
         listprofesview.setLongClickable(true);
         listprofesview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

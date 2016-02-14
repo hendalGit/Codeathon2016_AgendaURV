@@ -34,6 +34,8 @@ public class Professor extends Fragment {
                              Bundle savedInstanceState) {
         View inflate = inflater.inflate(R.layout.professor, container, false);
 
+
+        container.getRootView().findViewById(R.id.fab).setVisibility(View.GONE);
         String name = getArguments().getString("nom");
         String email = getArguments().getString("correu");
         String despacho = getArguments().getString("despatx");
