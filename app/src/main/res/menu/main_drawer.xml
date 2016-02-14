@@ -6,11 +6,11 @@
             <item
                 android:id="@+id/nav_horari"
                 android:icon="@drawable/horari"
-                android:title="Horari" />
+                android:title="@string/title_activity_horari" />
             <item
                 android:id="@+id/nav_calendari"
                 android:icon="@drawable/calendari"
-                android:title="Calendari" />
+                android:title="@string/title_activity_calendari" />
         </menu>
     </item>
 
@@ -19,15 +19,15 @@
             <item
                 android:id="@+id/nav_qualificacions"
                 android:icon="@drawable/notes"
-                android:title="Qualificacions" />
+                android:title="@string/title_activity_qualficacions" />
             <item
                 android:id="@+id/nav_professors"
                 android:icon="@drawable/user"
-                android:title="Disponibilitat professors" />
+                android:title="@string/title_activity_professors" />
             <item
                 android:id="@+id/nav_sales"
                 android:icon="@drawable/sales"
-                android:title="Disponibilitat CRAI" />
+                android:title="@string/title_activity_crai" />
         </menu>
     </item>
 

@@ -3,25 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_gravity="center_horizontal"
-        android:background="@color/colorPrimary"
-        android:layout_marginTop="0dp">
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Horari"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:elegantTextHeight="false"
-            android:textSize="30dp"
-            android:textStyle="bold"
-            android:layout_marginBottom="5dp" />
 
-    </LinearLayout>
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,23 +11,24 @@
         >
         <TextView
             android:layout_width="fill_parent"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:text="Dilluns 15/02/2016"
             android:textAlignment="inherit"
-            android:textColor="#FFFFFF"
-            android:background="@color/colorPrimaryLight"
+            android:textColor="@color/colorPrimary"
             android:elegantTextHeight="false"
-            android:textSize="25dp"
+            android:textSize="20dp"
             android:textStyle="bold"
-            android:layout_marginBottom="5dp" />
+            android:padding="@dimen/title_padding"
+            android:layout_marginBottom="5dp"></TextView>
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <ListView
-                android:layout_width="80dp"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/listView"
+                android:contextClickable="false"
                 android:layout_gravity="center_horizontal"
                 android:textAlignment="center" />
 

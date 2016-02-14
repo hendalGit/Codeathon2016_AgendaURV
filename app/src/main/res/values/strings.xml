@@ -4,7 +4,12 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Configuració</string>
+    <string name="action_logout">Tancar sessió</string>
+    <string name="title_activity_horari">Horari</string>
+    <string name="title_activity_professors">Professors</string>
+    <string name="title_activity_crai">CRAI</string>
+    <string name="title_activity_qualficacions">Qualificacions</string>
     <string name="title_activity_calendari">Calendari</string>
     <string name="calendari_text_event">Event</string>
 
