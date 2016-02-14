@@ -11,11 +11,11 @@ import java.util.ArrayList;
 public class ListViewAdapterProfessors extends BaseAdapter {
     Context context;
     ArrayList<String> titulos;
-    int[] imagenes;
+    ArrayList<Integer> imagenes;
     LayoutInflater inflater;
     Professors prof;
 
-    public ListViewAdapterProfessors(Context context, ArrayList<String> titulos, int[] imagenes, Professors parent) {
+    public ListViewAdapterProfessors(Context context, ArrayList<String> titulos, ArrayList<Integer> imagenes, Professors parent) {
         this.context = context;
         this.titulos = titulos;
         this.imagenes = imagenes;
@@ -38,24 +38,16 @@ public class ListViewAdapterProfessors extends BaseAdapter {
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
-
-        // Declare Variables
         TextView txtTitle;
         ImageView imgImg;
-
-        //http://developer.android.com/intl/es/reference/android/view/LayoutInflater.html
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
         View itemView = inflater.inflate(R.layout.list_row, parent, false);
 
-
-        // Locate the TextViews in listview_item.xml
         txtTitle = (TextView) itemView.findViewById(R.id.list_row_title);
         imgImg = (ImageView) itemView.findViewById(R.id.list_row_image);
 
-        // Capture position and set to the TextViews
         txtTitle.setText(titulos.get(position));
-        imgImg.setImageResource(imagenes[position]);
+        imgImg.setImageResource(imagenes.get(position));
 
         itemView.setTag(position);
 

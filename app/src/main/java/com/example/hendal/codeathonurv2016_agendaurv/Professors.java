@@ -18,8 +18,12 @@ public class Professors extends Fragment {
 
     ListViewAdapterProfessors adapter;
     ArrayList<String> llistaprofessors;
+
     ArrayList<String> llistacorreus;
     ArrayList<String> llistadespatxos;
+
+    ArrayList<Integer> imagenes;
+
 
 
     public void onCreate(Bundle savedInstanceState) {
@@ -31,11 +35,11 @@ public class Professors extends Fragment {
 
         View inflate = inflater.inflate(R.layout.professors, container, false);
         llistaprofessors = new ArrayList<>();
-
         llistaprofessors.add("Jordi Duch");
         llistaprofessors.add("Álex Arenas");
         llistaprofessors.add("Santiago Romaní");
         llistaprofessors.add("Tomas Gonzalez");
+
 
         llistacorreus = new ArrayList<>();
 
@@ -52,18 +56,20 @@ public class Professors extends Fragment {
         llistadespatxos.add("Despatx 253 (Disponible)");
 
 
-        int[] imagenes = {
-                R.drawable.jordiverd,
-                R.drawable.alexverd,
-                R.drawable.romanirojo,
-                R.drawable.tomasverd
-        };
+
         final int[] imggrandes = {
                 R.drawable.jordi,
                 R.drawable.alex,
                 R.drawable.romani,
                 R.drawable.tomas
         };
+
+
+        imagenes = new ArrayList<Integer>();
+        imagenes.add(R.drawable.jordiverd);
+        imagenes.add(R.drawable.alexverd);
+        imagenes.add(R.drawable.romanirojo);
+        imagenes.add(R.drawable.tomasverd);
 
 
         adapter = new ListViewAdapterProfessors(getContext(), llistaprofessors, imagenes, this);
@@ -103,6 +109,7 @@ public class Professors extends Fragment {
         menu.setHeaderTitle("Accions");
         menu.add(0, v.getId(), 0, "Eliminar");
         selectedItem = v;
+        selectedItem.setTag(((AdapterView.AdapterContextMenuInfo)menuInfo).position);
 
     }
 
@@ -111,6 +118,7 @@ public class Professors extends Fragment {
             int pos = (int)selectedItem.getTag();
             Toast.makeText(getActivity(), "Esborrat el professor " + llistaprofessors.get(pos), Toast.LENGTH_SHORT).show();
             llistaprofessors.remove(pos);
+            imagenes.remove(pos);
             adapter.notifyDataSetChanged();
         }
         else {
