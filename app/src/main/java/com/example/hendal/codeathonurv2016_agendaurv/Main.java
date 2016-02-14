@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.ContextMenu;
 import android.view.KeyEvent;
@@ -87,6 +88,8 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
+
+    private int lastSelectedItem=0;
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -116,9 +119,42 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
         ft.addToBackStack("tag_back");
         ft.commit();
 
+        lastSelectedItem= id;
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        if ((keyCode == KeyEvent.KEYCODE_BACK))
+        {
+            int id = lastSelectedItem;
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            if (id == R.id.nav_horari) {
+                ft.replace(R.id.fragment, new Horari());
+                toolbar.setTitle(R.string.title_activity_horari);
+            } else if (id == R.id.nav_calendari) {
+                ft.replace(R.id.fragment, new Calendari());
+                toolbar.setTitle(R.string.title_activity_calendari);
+            } else if (id == R.id.nav_professors) {
+                ft.replace(R.id.fragment, new Professors());
+                toolbar.setTitle(R.string.title_activity_professors);
+            } else if (id == R.id.nav_qualificacions) {
+                ft.replace(R.id.fragment, new Qualificacions());
+                toolbar.setTitle(R.string.title_activity_qualficacions);
+            } else if (id == R.id.nav_sales) {
+                ft.replace(R.id.fragment, new Crai());
+                toolbar.setTitle(R.string.title_activity_crai);
+            }
+            ft.addToBackStack("tag_back");
+            ft.commit();
+            lastSelectedItem=R.id.nav_horari;
 
+            return true;
+
+        }
+
+        return super.onKeyDown(keyCode, event);
+    }
 }

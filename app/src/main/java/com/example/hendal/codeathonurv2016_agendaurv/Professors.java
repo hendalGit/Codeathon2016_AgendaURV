@@ -18,10 +18,8 @@ public class Professors extends Fragment {
 
     ListViewAdapterProfessors adapter;
     ArrayList<String> llistaprofessors;
-
     ArrayList<String> llistacorreus;
     ArrayList<String> llistadespatxos;
-
     ArrayList<Integer> imagenes;
 
 
