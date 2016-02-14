@@ -39,8 +39,7 @@ public class Crai extends Fragment {
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
                 ft.replace(R.id.fragment, new Campus());
                 ft.commit();
-
-
+                Main.lastSelectedItem = R.id.nav_sales;
             }
         });
         return inflate;

@@ -94,6 +94,8 @@ public class Professors extends Fragment {
                 f.setArguments(parametro);
                 ft.replace(R.id.fragment, f);
                 ft.commit();
+                Main.lastSelectedItem = R.id.nav_professors;
+
             }
         });
         registerForContextMenu(listprofesview);
