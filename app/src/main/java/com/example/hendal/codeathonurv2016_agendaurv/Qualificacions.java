@@ -16,8 +16,8 @@ public class Qualificacions extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View inflate = inflater.inflate(R.layout.qualificacions, container, false);
-        final String[] llistQualificacions = new String[]{ "Analisi i Disseny d'Aplicacions","Sistemes Distribuits", "Llenguatges Formals"};
-        final String[] llistNotes = new String[] {"5.68","9.68","8.5"};
+        final String[] llistQualificacions = new String[]{ "Analisi i Disseny d'Aplicacions","Sistemes Distribuits", "Llenguatges Formals","Matemàtiques discretes I","Matemàtiques discretes II","Programació","Computadors"};
+        final String[] llistNotes = new String[] {"5.68","9.68","8.53","6,56","7,80","8,53","7,44"};
 
         ListViewAdapterQualificacions adapter = new ListViewAdapterQualificacions(getContext(), llistQualificacions, llistNotes);
         ListView listQualificacionsView = (ListView) inflate.findViewById(R.id.list_qualificacions);

@@ -11,7 +11,7 @@ public class ListViewAdapterQualificacions extends BaseAdapter {
     Context context;
     String[] names;
     String[] notes;
-    int[] colors = {R.color.subject1,R.color.subject2,R.color.subject3,R.color.subject4,R.color.subject5,R.color.subject6};
+    int[] colors = {R.color.subject1,R.color.subject2,R.color.subject3,R.color.subject4,R.color.subject5,R.color.subject6,R.color.subject1,R.color.subject2,R.color.subject3,R.color.subject4,R.color.subject5,R.color.subject6};
     LayoutInflater inflater;
 
     public ListViewAdapterQualificacions(Context context, String[] names, String[] notes) {
