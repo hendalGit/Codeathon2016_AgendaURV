@@ -11,11 +11,11 @@ import java.util.ArrayList;
 public class ListViewAdapterProfessors extends BaseAdapter {
     Context context;
     ArrayList<String> titulos;
-    int[] imagenes;
+    ArrayList<Integer> imagenes;
     LayoutInflater inflater;
     Professors prof;
 
-    public ListViewAdapterProfessors(Context context, ArrayList<String> titulos, int[] imagenes, Professors parent) {
+    public ListViewAdapterProfessors(Context context, ArrayList<String> titulos, ArrayList<Integer> imagenes, Professors parent) {
         this.context = context;
         this.titulos = titulos;
         this.imagenes = imagenes;
@@ -55,7 +55,7 @@ public class ListViewAdapterProfessors extends BaseAdapter {
 
         // Capture position and set to the TextViews
         txtTitle.setText(titulos.get(position));
-        imgImg.setImageResource(imagenes[position]);
+        imgImg.setImageResource(imagenes.get(position));
 
         itemView.setTag(position);
 

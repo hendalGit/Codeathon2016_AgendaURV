@@ -18,11 +18,11 @@ public class Professors extends Fragment {
 
     ListViewAdapterProfessors adapter;
     ArrayList<String> llistaprofessors;
+    ArrayList<Integer> imagenes;
+
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,19 +30,16 @@ public class Professors extends Fragment {
 
         View inflate = inflater.inflate(R.layout.professors, container, false);
         llistaprofessors = new ArrayList<>();
-
         llistaprofessors.add("Jordi Duch");
         llistaprofessors.add("Álex Arenas");
         llistaprofessors.add("Santiago Romaní");
         llistaprofessors.add("Tomas Gonzalez");
 
-
-        int[] imagenes = {
-                R.drawable.jordiverd,
-                R.drawable.alexverd,
-                R.drawable.romanirojo,
-                R.drawable.tomasverd
-        };
+        imagenes = new ArrayList<Integer>();
+        imagenes.add(R.drawable.jordiverd);
+        imagenes.add(R.drawable.alexverd);
+        imagenes.add(R.drawable.romanirojo);
+        imagenes.add(R.drawable.tomasverd);
 
         adapter = new ListViewAdapterProfessors(getContext(), llistaprofessors, imagenes, this);
         ListView listprofesview = (ListView) inflate.findViewById(R.id.llistaprofessorsView);
@@ -75,6 +72,7 @@ public class Professors extends Fragment {
         menu.setHeaderTitle("Accions");
         menu.add(0, v.getId(), 0, "Eliminar");
         selectedItem = v;
+        selectedItem.setTag(((AdapterView.AdapterContextMenuInfo)menuInfo).position);
 
     }
 
@@ -83,6 +81,7 @@ public class Professors extends Fragment {
             int pos = (int)selectedItem.getTag();
             Toast.makeText(getActivity(), "Esborrat el professor " + llistaprofessors.get(pos), Toast.LENGTH_SHORT).show();
             llistaprofessors.remove(pos);
+            imagenes.remove(pos);
             adapter.notifyDataSetChanged();
         }
         else {
