@@ -39,9 +39,13 @@ public class Professors extends Fragment {
         listprofesview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                String name = "Jordi Duch Gavaldá";
+                Bundle parametro = new Bundle();
+                parametro.putString("nom", name);
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.fragment, new Professor());
+                Fragment f = new Professor();
+                f.setArguments(parametro);
+                ft.replace(R.id.fragment, f);
                 ft.commit();
 
             }
