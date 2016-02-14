@@ -3,6 +3,7 @@ package com.example.hendal.codeathonurv2016_agendaurv;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,8 +41,9 @@ public class Professors extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                //Intent i = new Intent(BuscaUniversitat.this, Pais.class);
-                //startActivity(i);
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.fragment, new Professor());
+                ft.commit();
 
             }
         });
