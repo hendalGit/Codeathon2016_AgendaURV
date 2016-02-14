@@ -23,15 +23,14 @@ public class Professors extends Fragment {
 
         View inflate = inflater.inflate(R.layout.professors, container, false);
         final String[] llistaprofessors = new String[]{
-                "Jordi Duch","Pedro Garcia", "Xavier Mallafré", "Álex Arenas", "Santiago Romaní"
+                "Jordi Duch", "Álex Arenas", "Santiago Romaní"
         };
 
         int[] imagenes = {
-                R.drawable.icono0,
-                R.drawable.icono1,
-                R.drawable.icono0,
-                R.drawable.icono1,
-                R.drawable.icono1
+                R.drawable.jordiverd,
+                R.drawable.alexverd,
+                R.drawable.romanirojo,
+               
         };
 
         ListViewAdapter adapter = new ListViewAdapter(getContext(), llistaprofessors, imagenes);
