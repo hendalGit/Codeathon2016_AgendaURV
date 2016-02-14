@@ -51,7 +51,6 @@ public class ListViewAdapterQualificacions extends BaseAdapter {
         textNames.setText(names[position]);
         textNotes.setText(notes[position]);
 
-
         return itemView;
     }
 }
