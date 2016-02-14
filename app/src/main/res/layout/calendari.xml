@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Eventos"
+        android:text="Events"
         android:id="@+id/textView3"
         android:layout_below="@+id/calendarView"
         android:layout_alignStart="@+id/calendarView" />
