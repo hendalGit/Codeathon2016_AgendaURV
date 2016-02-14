@@ -50,7 +50,6 @@ public class ListViewAdapter extends BaseAdapter {
 
         View itemView = inflater.inflate(R.layout.list_row, parent, false);
 
-        prof.registerForContextMenu(itemView);
 
         // Locate the TextViews in listview_item.xml
         txtTitle = (TextView) itemView.findViewById(R.id.list_row_title);

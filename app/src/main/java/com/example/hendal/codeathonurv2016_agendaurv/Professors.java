@@ -49,6 +49,7 @@ public class Professors extends Fragment {
         adapter = new ListViewAdapter(getContext(), llistaprofessors, imagenes, this);
         ListView listprofesview = (ListView) inflate.findViewById(R.id.llistaprofessorsView);
         listprofesview.setAdapter(adapter);
+        listprofesview.setLongClickable(true);
         listprofesview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -57,9 +58,7 @@ public class Professors extends Fragment {
                 ft.commit();
             }
         });
-
-
-
+        registerForContextMenu(listprofesview);
         return inflate;
     }
 
