@@ -6,18 +6,16 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 
-public class ListViewAdapter extends BaseAdapter {
-    // Declare Variables
+public class ListViewAdapterProfessors extends BaseAdapter {
     Context context;
     ArrayList<String> titulos;
     int[] imagenes;
     LayoutInflater inflater;
     Professors prof;
 
-    public ListViewAdapter(Context context, ArrayList<String> titulos, int[] imagenes, Professors parent) {
+    public ListViewAdapterProfessors(Context context, ArrayList<String> titulos, int[] imagenes, Professors parent) {
         this.context = context;
         this.titulos = titulos;
         this.imagenes = imagenes;

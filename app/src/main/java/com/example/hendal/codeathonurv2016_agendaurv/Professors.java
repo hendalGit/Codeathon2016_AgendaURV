@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class Professors extends Fragment {
 
-    ListViewAdapter adapter;
+    ListViewAdapterProfessors adapter;
     ArrayList<String> llistaprofessors;
 
     public void onCreate(Bundle savedInstanceState) {
@@ -32,21 +32,19 @@ public class Professors extends Fragment {
         llistaprofessors = new ArrayList<>();
 
         llistaprofessors.add("Jordi Duch");
-        llistaprofessors.add("Pedro Garcia");
-        llistaprofessors.add("Xavier Mallafré");
         llistaprofessors.add("Álex Arenas");
         llistaprofessors.add("Santiago Romaní");
+        llistaprofessors.add("Tomas Gonzalez");
 
 
         int[] imagenes = {
-                R.drawable.icono0,
-                R.drawable.icono1,
-                R.drawable.icono0,
-                R.drawable.icono1,
-                R.drawable.icono1
+                R.drawable.jordiverd,
+                R.drawable.alexverd,
+                R.drawable.romanirojo,
+                R.drawable.tomasverd
         };
 
-        adapter = new ListViewAdapter(getContext(), llistaprofessors, imagenes, this);
+        adapter = new ListViewAdapterProfessors(getContext(), llistaprofessors, imagenes, this);
         ListView listprofesview = (ListView) inflate.findViewById(R.id.llistaprofessorsView);
         listprofesview.setAdapter(adapter);
         listprofesview.setLongClickable(true);
@@ -66,8 +64,7 @@ public class Professors extends Fragment {
 
 
     private View selectedItem;
-    public void onCreateContextMenu(ContextMenu menu, View v,
-                                    ContextMenu.ContextMenuInfo menuInfo) {
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
         menu.setHeaderTitle("Accions");
         menu.add(0, v.getId(), 0, "Eliminar");
