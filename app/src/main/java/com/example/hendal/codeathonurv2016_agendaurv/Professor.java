@@ -3,7 +3,9 @@ package com.example.hendal.codeathonurv2016_agendaurv;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,8 +35,9 @@ public class Professor extends Fragment {
         View inflate = inflater.inflate(R.layout.professor, container, false);
 
         String name = getArguments().getString("nom");
-        String email = "jordi.duch@urv.cat";
-        String despacho = "Despatx 256 (Disponible)";
+        String email = getArguments().getString("correu");
+        String despacho = getArguments().getString("despatx");
+        int img2 = getArguments().getInt("img");
         final String[] llistahores = new String[]{
                 "9:30","10:30", "12:30"
         };
@@ -49,7 +52,7 @@ public class Professor extends Fragment {
         nom.setText(name);
         despachoview.setText(despacho);
         correo.setText(email);
-        img.setImageResource(R.drawable.jordi);
+        img.setImageResource(img2);
         Button reservarcita = (Button) inflate.findViewById(R.id.reservar);
         reservarcita.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,4 +75,9 @@ public class Professor extends Fragment {
         });
         return inflate;
     }
+
+
+    
+
+
 }
