@@ -30,7 +30,7 @@ public class Professors extends Fragment {
                 R.drawable.jordiverd,
                 R.drawable.alexverd,
                 R.drawable.romanirojo,
-               
+
         };
 
         ListViewAdapter adapter = new ListViewAdapter(getContext(), llistaprofessors, imagenes);
