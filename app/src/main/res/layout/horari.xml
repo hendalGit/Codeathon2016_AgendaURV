@@ -25,17 +25,9 @@
             android:layout_height="match_parent">
 
             <ListView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/listView"
-                android:contextClickable="false"
-                android:layout_gravity="center_horizontal"
-                android:textAlignment="center" />
-
-            <ListView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/listView2"
+                android:id="@+id/list_horaris"
                 android:layout_column="7"
                 android:textAlignment="center" />
 

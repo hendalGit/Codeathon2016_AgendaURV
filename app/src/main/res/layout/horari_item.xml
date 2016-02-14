@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/horari_item"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <LinearLayout android:id="@+id/thumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dip"
+        android:layout_alignParentLeft="true"
+
+        android:layout_marginRight="5dip">
+
+        <TextView
+            android:id="@+id/horari_row_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="title"
+            android:textColor="#040404"
+            android:typeface="sans"
+            android:textSize="18dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/thumbnail"
+            android:layout_margin="5dp" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/horari_row_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="title"
+        android:textColor="#040404"
+        android:typeface="sans"
+        android:textSize="18dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/thumbnail"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/horari_row_office"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="title"
+        android:textColor="#040404"
+        android:typeface="sans"
+        android:textSize="12dp"
+        android:layout_below="@+id/horari_row_name"
+        android:layout_alignEnd="@+id/horari_row_name"
+        android:layout_marginLeft="200dp"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="5dp"
+        android:layout_height="43dp"
+        android:id="@+id/horari_row_color"
+        android:layout_alignBottom="@+id/horari_row_office"
+        android:layout_alignTop="@+id/horari_row_name"
+        android:layout_marginTop="-16dp"
+        android:layout_marginBottom="-16dp"
+        />
+
+</RelativeLayout>

@@ -8,6 +8,12 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.support.v4.app.Fragment;
+import android.widget.SimpleAdapter;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Chus on 13/02/2016.
@@ -20,28 +26,15 @@ public class Horari extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View inflate = inflater.inflate(R.layout.horari, container, false);
-        final String[] llistacampus = new String[]{ "ASSIGNATURA 1 ","ASSIGNATURA 2", "ASSIGNATURA 3"};
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(getContext(), android.R.layout.select_dialog_item, llistacampus);
-        ListView listprofesview = (ListView) inflate.findViewById(R.id.listView2);
-        listprofesview.setAdapter(adapter1);
-        final String[] llistahores = new String[]{"09:30"+System.getProperty ("line.separator")+"11:00","09:30"+System.getProperty ("line.separator")+"11:00", "09:30"+System.getProperty ("line.separator")+"11:20"};
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(getContext(), android.R.layout.select_dialog_item, llistahores);
-        ListView listprofesview2 = (ListView) inflate.findViewById(R.id.listView);
-        listprofesview2.setAdapter(adapter2);
-        listprofesview2.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        final String[] llistNames = new String[]{ "Analisi i Disseny d'Aplicacions","Sistemes Distribuits", "Llenguatges Formals"};
+        final String[] llistOffice = new String[]{ "Aula 216","Laboratori 116", "Laboratori 209"};
+        final String[] llistaTimes = new String[]{"09:30"+System.getProperty ("line.separator")+"11:00","09:30"+System.getProperty ("line.separator")+"11:00", "09:30"+System.getProperty ("line.separator")+"11:20"};
 
-        {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+        View horariView = inflater.inflate(R.layout.professors, container, false);
 
-                //Intent i = new Intent(BuscaUniversitat.this, Pais.class);
-                //startActivity(i);
-
-            }
-
-        });
-
-
+        ListViewAdapterHorari adapter = new ListViewAdapterHorari(getContext(), llistNames, llistOffice, llistaTimes);
+        ListView listHorariView = (ListView) inflate.findViewById(R.id.list_horaris);
+        listHorariView.setAdapter(adapter);
 
         return inflate;
     }
