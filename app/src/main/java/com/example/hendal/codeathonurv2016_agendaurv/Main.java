@@ -75,39 +75,26 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
         int id = item.getItemId();
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         if (id == R.id.nav_horari) {
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.fragment, new Horari());
             toolbar.setTitle(R.string.title_activity_horari);
-            ft.addToBackStack("tag_back");
-            ft.commit();
         } else if (id == R.id.nav_calendari) {
-
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.fragment, new Calendari());
-            ft.addToBackStack("tag_back");
             toolbar.setTitle(R.string.title_activity_calendari);
-            ft.commit();
-
         } else if (id == R.id.nav_professors) {
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.fragment, new Professors());
-            ft.addToBackStack("tag_back");
             toolbar.setTitle(R.string.title_activity_professors);
-            ft.commit();
-
         } else if (id == R.id.nav_qualificacions) {
+            ft.replace(R.id.fragment, new Qualificacions());
             toolbar.setTitle(R.string.title_activity_qualficacions);
         } else if (id == R.id.nav_sales) {
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.fragment, new Crai());
-            ft.addToBackStack("tag_back");
             toolbar.setTitle(R.string.title_activity_crai);
-            ft.commit();
-
         }
+        ft.addToBackStack("tag_back");
+        ft.commit();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
